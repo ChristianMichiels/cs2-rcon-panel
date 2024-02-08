@@ -24,3 +24,8 @@
 .logout-btn {
     margin: 0px;
 }
+
+body {
+  background: #FFFFFF; /* This sets the background to white */
+  color: #fff;
+}
