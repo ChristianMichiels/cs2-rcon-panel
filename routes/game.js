@@ -118,6 +118,10 @@ router.post('/api/go-live', is_authenticated, async (req, res) => {
         } else if (game_mode == "2") {
             console.log("Executing live_wingman.cfg")
             execute_cfg_on_server(server_id, './cfg/live_wingman.cfg');
+        } else if (game_mode == "3") {
+            execute_cfg_on_server(server_id, './cfg/gamemode_teamdeathmatch.cfg');
+        } else if (game_mode == "4") {
+            execute_cfg_on_server(server_id, './cfg/gamemode_armsrace.cfg');
         }
         // rcon.rcons[server_id].execute('mp_restartgame 1');
         await rcon.execute_command(server_id, `mp_restartgame 1`);
