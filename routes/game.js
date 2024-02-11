@@ -64,8 +64,7 @@ router.post('/api/start-warmup', is_authenticated, async (req, res) => {
     try {
         const server_id = req.body.server_id;
         // rcon.rcons[server_id].execute('mp_restartgame 1');
-        await rcon.execute_command(server_id, `mp_restartgame 1`);
-        execute_cfg_on_server(server_id, 'exec practice');
+        await rcon.execute_command(server_id, `exec practice`);
 
         return res.status(200).json({ message: 'Warmup started!' });
     } catch (error) {
