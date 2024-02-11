@@ -30,7 +30,7 @@ router.post('/api/setup-game', is_authenticated, async (req, res) => {
         } else if (game_mode == "2") {
             execute_cfg_on_server(server_id, './cfg/live_wingman.cfg');
         } else if (game_mode == "3") {
-            execute_cfg_on_server(server_id, './cfg/gamemode_teamdeathmatch.cfg');
+            execute_cfg_on_server(server_id, './cfg/gamemode_dm_freeforall.cfg');
         } else if (game_mode == "4") {
             execute_cfg_on_server(server_id, './cfg/gamemode_armsrace.cfg');
         }
@@ -119,7 +119,7 @@ router.post('/api/go-live', is_authenticated, async (req, res) => {
             console.log("Executing live_wingman.cfg")
             execute_cfg_on_server(server_id, './cfg/live_wingman.cfg');
         } else if (game_mode == "3") {
-            execute_cfg_on_server(server_id, './cfg/gamemode_teamdeathmatch.cfg');
+            execute_cfg_on_server(server_id, './cfg/gamemode_dm_freeforall.cfg');
         } else if (game_mode == "4") {
             execute_cfg_on_server(server_id, './cfg/gamemode_armsrace.cfg');
         }
