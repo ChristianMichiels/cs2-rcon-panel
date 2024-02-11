@@ -39,11 +39,6 @@ router.post('/api/setup-game', is_authenticated, async (req, res) => {
         await rcon.execute_command(server_id, `mp_warmup_pausetimer 1`);
         await rcon.execute_command(server_id, `changelevel ${selected_map}`);
 
-        // Adding 1 second delay in executing warmup.cfg to make it effective after map has been changed.
-        setTimeout(() => {
-            execute_cfg_on_server(server_id, './cfg/live.cfg');
-        }, 1000)
-
         return res.status(200).json({ message: 'Game Created!' });
     } catch (error) {
         console.log(error);
