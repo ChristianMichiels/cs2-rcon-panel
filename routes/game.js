@@ -41,7 +41,7 @@ router.post('/api/setup-game', is_authenticated, async (req, res) => {
 
         // Adding 1 second delay in executing warmup.cfg to make it effective after map has been changed.
         setTimeout(() => {
-            execute_cfg_on_server(server_id, './cfg/warmup.cfg');
+            execute_cfg_on_server(server_id, './cfg/live.cfg');
         }, 1000)
 
         return res.status(200).json({ message: 'Game Created!' });
