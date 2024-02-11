@@ -26,7 +26,7 @@ router.post('/api/setup-game', is_authenticated, async (req, res) => {
         }
         await rcon.execute_command(server_id, `game_mode ${game_mode}`);
         if (game_mode == "1") {
-            execute_cfg_on_server(server_id, './cfg/live.cfg');
+            execute_cfg_on_server(server_id, './cfg/gamemode_competitive.cfg');
         } else if (game_mode == "2") {
             execute_cfg_on_server(server_id, './cfg/live_wingman.cfg');
         } else if (game_mode == "3") {
