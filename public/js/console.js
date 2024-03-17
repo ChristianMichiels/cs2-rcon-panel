@@ -193,6 +193,16 @@ $(document).ready(function () {
         send_post_request('/api/say-admin', data);
         $('#say_input').val('');
     });
+    
+    $('#workshopInputBtn').on('click', function () {
+        let data = {
+            command: $('#worshopInput').val()
+        };
+        send_post_request('/api/workshop', data);
+        $('#workshopInput').val('');
+    });
+
+
 
     $('#list_backups').on('click', function () {
         send_post_request('/api/list-backups');
