@@ -252,15 +252,10 @@ router.post('/api/say-admin', is_authenticated, async (req, res) => {
 router.post('/api/workshop', is_authenticated, async (req, res) => {
     try {
         const server_id = req.body.server_id;
-        const command = req.body.command;
-
-        const response = await rcon.execute_command(server_id, "host_workshop_map " + command);
-
-        if (response == 200) {
-            return res.status(200).json({ message: 'Command sent!' });
-        }
-
-        return res.status(200).json({ message: 'Command sent! Response received:\n' + response.toString() });
+        const message = req.body.message;
+        const message_to_send = "host_workshop_map " + message;
+        await rcon.execute_command(server_id, message_to_send);
+        return res.status(200).json({ message: 'Message sent!' });
     } catch (error) {
         res.status(500).json({ error: 'Internal server error' });
     }
