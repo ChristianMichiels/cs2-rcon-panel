@@ -9,10 +9,10 @@
     <!-- Custom CSS -->
     <style>
         body {
-            background: #FFFFFF;
+            background: linear-gradient(to bottom right, #3494E6, #EC6EAD);
             font-family: Arial, sans-serif;
             text-align: center;
-            color: #000;
+            color: #333;
             height: 100vh; /* Set body height to 100% of viewport height */
             margin: 0; /* Remove margin to fill the entire viewport */
             flex-direction: column;
@@ -21,7 +21,7 @@
         }
 
         h1 {
-            color: #000;
+            color: #fff;
         }
 
         form.server-setup-form {
@@ -106,8 +106,6 @@
                             <option value="de_anubis">de_anubis</option>
                             <option value="de_nuke">de_nuke</option>
                             <option value="de_vertigo">de_vertigo</option>
-                            <option value="ar_shoots">ar_shoots</option>
-                            <option value="ar_baggage">ar_baggage</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -115,8 +113,6 @@
                         <select id="game_mode" name="gamemode" class="form-select">
                             <option value="1">Competitive</option>
                             <option value="2">Wingman</option>
-                            <option value="3">Deathmatch</option>
-                            <option value="4">Arms Race</option>
                         </select>
                     </div>
                     <div class="mb-3">
@@ -231,11 +227,6 @@
                             </g>
                         </svg> Swap Teams
                     </button>
-                    <button type="submit" id="go_practice" name="action" class="btn btn-success">
-                        <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
-                            <path d="M11.742 8.47 5.975 12.764a.5.5 0 0 1-.31.108H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1.665a.5.5 0 0 1 .31.108l5.767 4.294a.5.5 0 0 1 0 .816z"/>
-                        </svg> Enable Practice
-                    </button>
                     <button type="submit" id="go_live" name="action" class="btn btn-success">
                         <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-play-fill" viewBox="0 0 16 16">
                             <path d="M11.742 8.47 5.975 12.764a.5.5 0 0 1-.31.108H4a1 1 0 0 1-1-1V3a1 1 0 0 1 1-1h1.665a.5.5 0 0 1 .31.108l5.767 4.294a.5.5 0 0 1 0 .816z"/>
@@ -274,7 +265,7 @@
                 </div>
                 <div id="rconResultBox" class="alert alert-primary" style="display: none;">
                     <strong>RCON Response:</strong>
-                    <p id="rconResultText"></p>
+                    <pre id="rconResultText" class="text-start"></pre>
                 </div>
                 
             </div>
