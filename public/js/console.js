@@ -172,6 +172,12 @@ $(document).ready(function () {
         }
     });
 
+    $('#go_practice').on('click', function () {
+        if (confirm("Are you sure you want to practice?")) {
+            send_post_request('/api/go-practice');
+        }
+    });
+
     $('#rconInputBtn').on('click', function () {
         let data = {
             command: $('#rconInput').val()
