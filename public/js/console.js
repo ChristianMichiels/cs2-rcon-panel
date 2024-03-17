@@ -194,12 +194,12 @@ $(document).ready(function () {
         $('#say_input').val('');
     });
     
-    $('#workshop_input_btn').on('click', function () {
+    $('#workshopInputBtn').on('click', function () {
         let data = {
-            message: $('#workshop_input').val()
+            command: $('#workshopInput').val()
         };
-        send_post_request('/api/workshop-admin', data);
-        $('#workshop_input').val('');
+        send_post_request('/api/workshop', data);
+        $('#workshopInput').val('');
     });
 
 
