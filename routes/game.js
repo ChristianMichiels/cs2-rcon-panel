@@ -241,7 +241,7 @@ router.post('/api/say-admin', is_authenticated, async (req, res) => {
     try {
         const server_id = req.body.server_id;
         const message = req.body.message;
-        const message_to_send = "host_workshop_map " + message;
+        const message_to_send = "host_workshop_map " + command;
         await rcon.execute_command(server_id, message_to_send);
         return res.status(200).json({ message: 'Message sent!' });
     } catch (error) {
