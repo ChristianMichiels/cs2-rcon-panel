@@ -34,7 +34,7 @@ router.post('/api/setup-game', is_authenticated, async (req, res) => {
         } else if (game_mode == "4") {
             execute_cfg_on_server(server_id, './cfg/gamemode_armsrace.cfg');
         } else if (game_mode == "5") {
-            execute_cfg_on_server(server_id, './cfg/practice.cfg');
+            rcon.execute_command(server_id, `exec practice.cfg`);
         }
         // rcon.rcons[server_id].execute(`mp_warmup_pausetimer 1`);
         // rcon.rcons[server_id].execute(`changelevel ${selected_map}`);
