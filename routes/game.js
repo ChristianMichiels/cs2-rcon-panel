@@ -208,6 +208,18 @@ router.post('/api/unpause', is_authenticated, async (req, res) => {
     }
 });
 
+// Unpause Game API
+router.post('/api/go-practice', is_authenticated, async (req, res) => {
+    try {
+        const server_id = req.body.server_id;
+        // rcon.rcons[server_id].execute('mp_unpause_match');
+        const response = await rcon.execute_command(server_id, 'exec practice.cfg');
+        return res.status(200).json({ message: 'Practice Started' });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 router.post('/api/rcon', is_authenticated, async (req, res) => {
     try {
         const server_id = req.body.server_id;
