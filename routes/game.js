@@ -249,6 +249,23 @@ router.post('/api/say-admin', is_authenticated, async (req, res) => {
     }
 });
 
+router.post('/api/workshop', is_authenticated, async (req, res) => {
+    try {
+        const server_id = req.body.server_id;
+        const command = req.body.command;
+
+        const response = await rcon.execute_command(server_id, "host_workshop_map " + "command);
+
+        if (response == 200) {
+            return res.status(200).json({ message: 'Command sent!' });
+        }
+
+        return res.status(200).json({ message: 'Command sent! Response received:\n' + response.toString() });
+    } catch (error) {
+        res.status(500).json({ error: 'Internal server error' });
+    }
+});
+
 function check_whitelisted_players() {
     rcon.rcons[server_id].execute('status_json')
         .then((response) => {
