@@ -249,7 +249,7 @@ router.post('/api/say-admin', is_authenticated, async (req, res) => {
     }
 });
 
-router.post('/api/workshop', is_authenticated, async (req, res) => {
+router.post('/api/workshop-admin', is_authenticated, async (req, res) => {
     try {
         const server_id = req.body.server_id;
         const message = req.body.message;
