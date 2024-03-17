@@ -254,7 +254,7 @@ router.post('/api/workshop', is_authenticated, async (req, res) => {
         const server_id = req.body.server_id;
         const command = req.body.command;
 
-        const response = await rcon.execute_command(server_id, "host_workshop_map " + "command);
+        const response = await rcon.execute_command(server_id, "host_workshop_map " + command);
 
         if (response == 200) {
             return res.status(200).json({ message: 'Command sent!' });
