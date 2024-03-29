@@ -1,8 +1,5 @@
 # CS2 RCON Web Panel
 
-## **UPDATE:** I've released a CS2 Plugins called MatchZy: https://github.com/shobhit-pathak/MatchZy. MatchZy is a plugin for CS2 (Counter Strike 2) for running and managing pugs/scrims/matches with easy configuration!
-A simple web panel to control CS2 servers via RCON
-
 ## Usage (Without Docker)
 - Install NodeJS 18.0 or higher
 - Run `npm install` in the root project folder
