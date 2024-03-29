@@ -34,7 +34,7 @@ A simple web panel to control CS2 servers via RCON
 
 ## Screenshot
 
-![Screenshot]([https://github.com/ChristianMichiels/cs2-rcon-panel/blob/master/image.png])
+![Screenshot](https://github.com/ChristianMichiels/cs2-rcon-panel/blob/master/image.png)
 
 ## Limitations
 
