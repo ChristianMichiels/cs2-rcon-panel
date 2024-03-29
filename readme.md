@@ -7,11 +7,15 @@
 - Run `nodemon app.js` in the root project folder
 - Default login credentials can be changed from db.js
 
-## Usage (Using Docker)
-- Run `docker-compose build` to build the image
-- Run `docker-compose up` to start the container
-- Navigate to localhost:3000 to start using the panel
-- Default login credentials can be changed from db.js
+## Usage (Using Docker Compose)
+
+`version: "3.3"
+services:
+  rconpanel:
+    build: https://github.com/ChristianMichiels/cs2-rcon-panel.git
+    ports:
+      - "3000:3000"
+    restart: unless-stopped`
 
 ## Abilities 
 
