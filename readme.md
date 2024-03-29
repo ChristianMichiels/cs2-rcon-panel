@@ -8,15 +8,15 @@
 - Default login credentials can be changed from db.js
 
 ## Usage (Using Docker Compose)
-
-`version: "3.3"
+```
+version: "3.3"
 services:
   rconpanel:
     build: https://github.com/ChristianMichiels/cs2-rcon-panel.git
     ports:
       - "3000:3000"
     restart: unless-stopped`
-
+```
 ## Abilities 
 
 - Setup Competitive/Wingman gamemodes
